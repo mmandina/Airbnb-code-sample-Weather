@@ -1,0 +1,6 @@
+*.DS_Store*
+*.idea*
+*pycache*
+backend/.env
+backend/venv
+backend/config.py
