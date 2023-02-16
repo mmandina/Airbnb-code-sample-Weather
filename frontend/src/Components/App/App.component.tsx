@@ -21,9 +21,12 @@ function App() {
         const weatherResponse = await axios.get<WeatherData>(
           `http://127.0.0.1:8000/weather?zipcode=${zipCode}`
         );
+        if (weatherResponse.data.error) {
+          throw new Error(weatherResponse.data.error);
+        }
         setWeatherData(weatherResponse.data);
       } catch (e) {
-        if (e instanceof AxiosError) {
+        if (e instanceof AxiosError || e instanceof Error) {
           setError(e.message);
         } else {
           setError('Unspecified Error');
@@ -50,7 +53,11 @@ function App() {
       />
       <button onClick={getWeatherData}>Get Weather</button>
       {showError && <h1 className='error'>{error}</h1>}
-      {isLoading ? <Loading /> : <WeatherCard weatherData={weatherData} />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        !showError && <WeatherCard weatherData={weatherData} />
+      )}
     </div>
   );
 }

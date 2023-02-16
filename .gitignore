@@ -3,4 +3,4 @@
 *pycache*
 backend/.env
 backend/venv
-backend/config.py
+
