@@ -1,4 +1,7 @@
-### Mini-Project by Max Mandina
+### Airbnb Mini-Project by Max Mandina
+This is a small tech demo to demonstrate my knowledge of Typescript, testing, react, and a small bit of python logic in the backend. 
+
+A more expansive project I built in Node.js, Express, and MongoDB is available at https://github.com/mmandina/findSurf. It is a global surf atlas that I built previously, but I feel that this project better demonstrates my current ability with modern frameworks/techniques, albeit on a smaller scale.
 
 ### Backend
 FastAPI app with 2 endpoints:
